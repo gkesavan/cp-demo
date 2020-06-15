@@ -15,7 +15,7 @@ In order to test this for a specific use-case, using Elasticsearch ingest pipeli
 
 To test:
 
-- This 
+- I had trouble building the Elasticsearch connector without access to Confluent Artifactory - so you will need to copy-in your Maven `.m2/settings.xml` to same path in this repo (it is `.gitignore`-d)
 - Run demo as normal.  Use the Elasticsearch API, or Kibana, to see documents being created in the `wikipediabot` index.
 - Review and run `scripts/elasticsearch/create_pipeline.sh` to create a processing pipeline named `/wikipediabot-createdat-monthlyindex`
 - Review and run `scripts/connectors/update_elastic_sink_config_with_pipeline.sh`, which updates the Elasticsearch sink connector to add configuration property `"elasticsearch.index.param.pipeline": "wikipediabot-createdat-monthlyindex"`.
